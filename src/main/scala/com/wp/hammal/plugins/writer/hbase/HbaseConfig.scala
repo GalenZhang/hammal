@@ -11,7 +11,7 @@ import scala.collection.mutable
 trait HbaseConfig extends ConfigUtil {
   protected def getConfigProps(): HbaseData = {
     val configRoot = "hbase"
-    val config = getConfig(configRoot, "")
+    val config = getConfig(configRoot, "properties")
     val zkQuorum = config.get("zkQuorum", throw new ConfigException(s"Unable to create config , due to missing or invalid zkQuorum configuration"))
     val zkPort = config.get("zkPort", throw new ConfigException(s"Unable to create config , due to missing or invalid zkPort configuration"))
     val zkParent = config.get("zkParent", throw new ConfigException(s"Unable to create config , due to missing or invalid zkParent configuration"))
